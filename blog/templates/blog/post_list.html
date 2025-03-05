@@ -4,19 +4,16 @@
     </head>
     <body>
         <div>
-            <h1><a href="/">俺のブログ</a></h1>
+            <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <p>今日は3月4日火曜日　雨</p>
-            <h2><a href="">ヤクをキメてぇぜ</a></h2>
-            <p>近くにココアシガレット置いてる駄菓子屋無いか、、、？ </p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 
-        <div>
-            <p>ps.禁断症状で手が震えてきた</p>
-            <h2><a href="">おん、、、？何見てんだ</a></h2>
-            <p> とっととウチに帰りな！今日こそ定時に！ </p>
-        </div>
     </body>
 </html>
